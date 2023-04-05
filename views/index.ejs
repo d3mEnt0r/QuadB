@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>QuadB Tech</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>HODLINFO.com</h1>
+      <div>
+        <select name="inr" id="inr">
+          <option value="inr">INR</option>
+        </select>
+        <select name="btc" id="btc">
+          <option value="btc">BTC</option>
+        </select>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Last</th>
+          <th>Buy/Sell Price</th>
+          <th>Volume</th>
+          <th>Base Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tickers.forEach(function(item) { %>
+        <tr>
+          <td><%= item.name %></td>
+          <td>₹ <%= item.last %></td>
+          <td>₹ <%= item.buy %>/₹ <%= item.sell %></td>
+          <td><%= item.volume %></td>
+          <td><%= item.base_unit %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>
